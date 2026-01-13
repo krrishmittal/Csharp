@@ -137,3 +137,180 @@
 //     }
 // }
 
+
+// Destructor in C#  it is automatically called when the object is destroyed It is used to release unmanaged resources like file handles, database connections
+
+// class P
+// {
+//     P()
+//     {
+//         Console.WriteLine("Constructor called");
+//     }
+//     ~P()
+//     {
+//         Console.WriteLine("destructor called");
+//     }
+//     public static void Main()
+//     {
+//         P obj=new P(); 
+//     }
+// }
+
+
+// Exception Handling in C#
+
+// In C#, exception handling is the process of responding to runtime anomalies, called exceptions, in a controlled way. Proper handling ensures that a program continues to run or exits gracefully instead of crashing unexpectedly. C# provides structured exception handling using the keywords try, catch, finally, and throw.
+
+// class M
+// {
+//     public static void main()
+//     {
+//         try
+//         {
+//             int res=10/0;
+//             Console.WriteLine(res);
+//         }
+//         catch(DivideByZeroException e)
+//         {
+//             Console.WriteLine("Exception: "+e);
+//         }
+//     }
+// }
+
+// try: The try block contains the code that might throw an exception. Only the code inside the try block is monitored for exceptions.
+// catch: The catch block handles exceptions thrown in the try block. You can have multiple catch blocks to handle different exception types
+// finally: The finally block always executes, whether an exception occurs or not. It is mainly used for cleanup tasks like closing files, releasing resources, or clearing memory
+// throw: The throw keyword is used to manually raise an exception. It can be used to signal that an error or invalid condition has occurred.
+//Exception handling prevents programs from crashing due to runtime errors.
+
+// class P
+// {
+//     public static void Main()
+//     {
+//         try
+//         {
+//             int [] arr=new int[6]{1,2,3,4,5,10/0};
+
+//             // if (arr[2] < 10)
+//             // {
+//             //     throw new ArgumentException("Less than 10");
+//             // }
+//             Console.WriteLine(arr[5]);
+//         }
+//         catch (IndexOutOfRangeException e)
+//         {
+//             Console.WriteLine("Exception "+e);
+//         }
+//         catch (Exception e)
+//         {
+//             Console.WriteLine(e);
+//         }
+//         finally
+//         {
+//             Console.WriteLine("This always executes");
+//         }
+//     }
+// }
+
+// user created exception
+// class M
+// {
+//     class AgeOutOfBound : Exception
+//     {
+//         public AgeOutOfBound(String message):base(message){}
+//     }
+//     class P
+//     {
+//         public static void Main()
+//         {
+//             try
+//             {
+//                 int age=10;
+//                 if(age<18)
+//                 {
+//                     throw new AgeOutOfBound("Age is less than 18");
+//                 }
+//             }
+//             catch(AgeOutOfBound e)
+//             {
+//                 Console.WriteLine(e.Message);
+//             }
+//         }
+//     }
+// }
+
+
+// Absraction in C# An abstract class cannot be directly instantiated. We can only create objects of derived classes.Abstract methods are declared in the abstract classes but do not have implementation, derived classes are required to implement them.
+// public abstract class Animal
+// {
+//     public abstract string sound{get;}
+//     public virtual void Move()
+//     {
+//         Console.WriteLine("Animal is moving");        
+//     }
+
+// }
+// public class Cat: Animal
+// {
+//     public override string sound=>"Meow";
+//     public override void Move()
+//     {
+//         Console.WriteLine("Cat is moving");
+//     }
+// }
+// public class Dog : Animal
+// {
+// 	public override string sound => "Woof";
+// 	public override void Move()
+// 	{
+// 		Console.WriteLine("Dog is moving");
+// 	}
+// }
+// class P
+// {
+//     public static void Main()
+//     {
+//         Animal a=new Dog();
+//         Animal b=new Cat();
+//         Console.WriteLine(a.sound);
+//         a.Move();
+//         Console.WriteLine(b.sound);
+//         b.Move();
+//     }
+// }
+
+// we use abstract class at the time of inheritance. 
+// A derived class must use the override keyword to implement an abstract method.
+// It can contain constructors or destructors.
+// It can implement functions with non-Abstract methods.
+// It cannot support multiple inheritances.
+// It can’t be static.
+
+// public abstract class Base{
+//     public abstract void display();
+// }
+// public class Child1 : Base
+// {
+//     public override void display()
+//     {
+//         Console.WriteLine("Child1");
+//     }
+// }
+
+// public class Child2 : Base
+// {
+//     public override void display()
+//     {
+//         Console.WriteLine("Child2");
+//     }
+// }
+// class M
+// {
+//     public static void Main()
+//     {
+//         Base b=new Child1();
+//         b.display();
+//         b=new Child2();
+//         b.display();
+//     }
+// }
