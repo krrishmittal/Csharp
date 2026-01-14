@@ -14,6 +14,7 @@ using System;
 
 class Program
 {
+    public static void Main(){
     // ===== EXAMPLE 1: String Arrays =====
     // Demonstrates creating and populating a string array with user input
     // 
@@ -221,5 +222,6 @@ class Program
     // 
     // Output Parameter: Used to return multiple values
     //     void GetValues(out int x) { }
+    }
 }
 

@@ -15,6 +15,7 @@ using System;
 
 class Program
 {
+    public static void Main(){
     // ===== EXAMPLE 1: Classes and Object Instantiation =====
     // Demonstrates creating a class and instantiating multiple objects
     // 
@@ -130,4 +131,5 @@ class Program
     // // Method can be called with different numbers of arguments
     // int sum = AddNumbers(1, 2, 3, 4, 5, 6);
     // Console.WriteLine($"Sum: {sum}");  // Output: 21
+    }
 }

@@ -14,6 +14,7 @@ using System;
 
 class Program
 {
+    public static void Main(){
     // ===== EXAMPLE 1: Printing Statements =====
     // Demonstrates basic console output
     // 
@@ -105,4 +106,5 @@ class Program
     // {
     //     Console.WriteLine($"Student {i + 1}: {students[i]}");
     // }
+    }
 }
