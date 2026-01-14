@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-// printing statetent
+﻿// printing statetent
 // Console.WriteLine("Enter your name:");
 
 // taking input from user and printing it
@@ -66,6 +64,3 @@
 // {
 //     Console.WriteLine($"Name: {students[i]}");
 // }
-
-
-
