@@ -44,6 +44,14 @@ I started from scratch and I'm documenting every step of my journey. From basic 
 
 ---
 
+---
+
+### **Day 7: Reading and Writing Files in C#** 
+
+[View Day 7 Details →](day7/readme.md)
+
+---
+
 ## 🎯 My Roadmap
 
 ```
