@@ -52,6 +52,12 @@ I started from scratch and I'm documenting every step of my journey. From basic 
 
 ---
 
+### **Day 8: Collections in C# - Generics** 
+
+[View Day 8 Details →](day8/readme.md)
+
+---
+
 ## 🎯 My Roadmap
 
 ```
