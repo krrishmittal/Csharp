@@ -192,6 +192,129 @@ class Program
         //     }
         // }
         // Stream is automatically closed when exiting the using block
+
+        // ===== EXAMPLE 7: using Statement =====
+        // Automatically closes and disposes resources when block ends
+        // Guarantees disposal even if exception occurs
+        // Industry standard - always use this approach!
+        // 
+        // Traditional using syntax:
+        // using (StreamReader sr = new StreamReader("sample.txt"))
+        // {
+        //     string line;
+        //     while ((line = sr.ReadLine()) != null)
+        //     {
+        //         Console.WriteLine(line);
+        //     }
+        // } // Automatically closed here - no need to call Close()
+        //
+        // Modern using declaration (C# 8+):
+        // using StreamReader sr = new StreamReader("sample.txt");
+        // string line;
+        // while ((line = sr.ReadLine()) != null)
+        // {
+        //     Console.WriteLine(line);
+        // }
+        // // Automatically closed at end of scope
+        //
+        // Multiple streams with using:
+        // using (StreamReader sr = new StreamReader("input.txt"))
+        // using (StreamWriter sw = new StreamWriter("output.txt"))
+        // {
+        //     string line;
+        //     while ((line = sr.ReadLine()) != null)
+        //     {
+        //         sw.WriteLine(line.ToUpper());
+        //     }
+        // }
+
+
+        // ===== EXAMPLE 8: File Existence Check (SAFETY) =====
+        // Always check if file exists before reading
+        // Prevents FileNotFoundException and app crashes
+        //
+        // string filePath = "sample.txt";
+        // if (File.Exists(filePath))
+        // {
+        //     string content = File.ReadAllText(filePath);
+        //     Console.WriteLine(content);
+        // }
+        // else
+        // {
+        //     Console.WriteLine("File not found! Creating new file...");
+        //     File.WriteAllText(filePath, "Default content");
+        // }
+
+        // ===== EXAMPLE 9: File Modes & File Access =====
+        // FileMode - How to open the file:
+        // - Create: Create new file, overwrite if exists
+        // - CreateNew: Create new file, throw exception if exists
+        // - Open: Open existing file, throw exception if not exists
+        // - OpenOrCreate: Open if exists, create if not
+        // - Append: Open and seek to end, or create new
+        // - Truncate: Open and clear contents
+        //
+        // FileAccess - What operations allowed:
+        // - Read: Read-only access
+        // - Write: Write-only access
+        // - ReadWrite: Both read and write
+        //
+        // FileShare - Allow other processes to access:
+        // - None: Exclusive access
+        // - Read: Others can read
+        // - Write: Others can write
+        // - ReadWrite: Others can read and write
+        //
+        // Example with all parameters:
+        // using (FileStream fs = new FileStream(
+        //     "data.txt",
+        //     FileMode.OpenOrCreate,
+        //     FileAccess.ReadWrite,
+        //     FileShare.Read))
+        // {
+        //     // File operations here
+        // }
+
+
+        // ===== EXAMPLE 10: Async File I/O (MODERN C#) =====
+        // Non-blocking operations for responsive applications
+        // Essential for web apps, APIs, desktop apps
+        //
+        // Note: These methods must be called from an async method
+        // 
+        // Async reading:
+        // public static async Task ReadFileAsync()
+        // {
+        //     string content = await File.ReadAllTextAsync("sample.txt");
+        //     Console.WriteLine(content);
+        //     
+        //     string[] lines = await File.ReadAllLinesAsync("sample.txt");
+        //     foreach (string line in lines)
+        //     {
+        //         Console.WriteLine(line);
+        //     }
+        // }
+        //
+        // Async writing:
+        // public static async Task WriteFileAsync()
+        // {
+        //     await File.WriteAllTextAsync("output.txt", "Hello Async World!");
+        //     await File.AppendAllTextAsync("log.txt", $"{DateTime.Now}: Event logged\n");
+        // }
+        //
+        // Async with StreamReader/StreamWriter:
+        // public static async Task ProcessFileAsync()
+        // {
+        //     using StreamReader sr = new StreamReader("input.txt");
+        //     using StreamWriter sw = new StreamWriter("output.txt");
+        //     
+        //     string? line;
+        //     while ((line = await sr.ReadLineAsync()) != null)
+        //     {
+        //         await sw.WriteLineAsync(line.ToUpper());
+        //     }
+        // }
+
     }
 }
 

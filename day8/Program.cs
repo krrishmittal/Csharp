@@ -216,11 +216,14 @@ class Program
         // 
         // Example:
         // using System.Linq;
-        // List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-        // var evenNumbers = numbers.Where(n => n % 2 == 0);
-        // var doubled = numbers.Select(n => n * 2);
-        // var sorted = numbers.OrderByDescending(n => n);
-
+        List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        var evenNumbers = numbers.Where(n => n % 2 == 0);
+        var doubled = numbers.Select(n => n * 2);
+        var sorted = numbers.OrderByDescending(n => n);
+        foreach(int x in evenNumbers)
+        {
+            Console.WriteLine(x);
+        }
 
         // ===== EXAMPLE 10: Finding Most Frequent Word Pattern =====
         // This example finds words with the same first and last character pattern
