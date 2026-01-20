@@ -58,6 +58,14 @@ I started from scratch and I'm documenting every step of my journey. From basic 
 
 ---
 
+---
+
+### **Day 9: Generics - Type-Safe Reusable Code** 
+
+[View Day 9 Details →](day9/readme.md)
+
+---
+
 ## 🎯 My Roadmap
 
 ```
