@@ -66,6 +66,12 @@ I started from scratch and I'm documenting every step of my journey. From basic 
 
 ---
 
+### **Day 10: Delegates - Type-Safe Function Pointers** 
+
+[View Day 10 Details →](day10/readme.md)
+
+---
+
 ## 🎯 My Roadmap
 
 ```
